@@ -16,7 +16,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(MainActivity.this, "Toast Message", Toast.LENGTH_LONG).show();
+        // Context
+        // Activity Context
+        // App Context
+        // getApplicationContext()
+
+        // Genel App'i ilgilendiren durumlarda getApplicationContext()'i kullanıyoruz
+
+        // Activity ile alakalı durumlarda this i kullanıyoruz
+        Toast.makeText(this, "Toast Message", Toast.LENGTH_LONG).show();
+
+        // Alternatif Kullanımlar
+        /*
+        Toast.makeText(MainActivity.this,"Toast Message", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Toast Message", Toast.LENGTH_LONG).show();
+        */
 
     }
 
@@ -28,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // save
-                Toast.makeText(MainActivity.this, "Saved",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Saved",Toast.LENGTH_LONG).show();
             }
         });
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
